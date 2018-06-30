@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".NewUserActivity">
+
+    <android.support.constraint.ConstraintLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+
+        <EditText
+            android:id="@+id/et_new_email"
+            style="@style/DescriptionStyle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="50dp"
+            android:layout_marginStart="50dp"
+            android:layout_marginTop="50dp"
+            android:background="@drawable/round"
+            android:ems="10"
+            android:hint="@string/email"
+            android:inputType="textWebEmailAddress"
+            android:padding="8dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+        </EditText>
+
+        <EditText
+            android:id="@+id/et_new_password"
+            style="@style/DescriptionStyle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/round"
+            android:ems="10"
+            android:hint="@string/password"
+            android:inputType="textPersonName"
+            android:padding="8dp"
+            app:layout_constraintEnd_toEndOf="@+id/et_new_email"
+            app:layout_constraintStart_toStartOf="@+id/et_new_email"
+            app:layout_constraintTop_toBottomOf="@+id/et_new_email" />
+
+        <Button
+            android:id="@+id/btn_new_signup"
+            style="@style/myStyleBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@string/signup"
+            app:layout_constraintEnd_toEndOf="@+id/et_new_password"
+            app:layout_constraintTop_toBottomOf="@+id/et_new_password" />
+    </android.support.constraint.ConstraintLayout>
+</layout>
