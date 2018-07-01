@@ -59,7 +59,7 @@ public class NewUserActivity extends AppCompatActivity implements View.OnClickLi
                             if (!task.isSuccessful()) {
                                 Toast.makeText(NewUserActivity.this, getString(R.string.ErrorCountAlready), Toast.LENGTH_LONG).show();
                             } else {
-                                startActivity(new Intent(NewUserActivity.this, MainActivity.class));
+                                startActivity(new Intent(NewUserActivity.this, DiaryActivity.class));
                                 finish();
                             }
                         }

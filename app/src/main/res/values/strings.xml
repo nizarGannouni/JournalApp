@@ -3,9 +3,10 @@
     <string name="activity_diary_title">My Diary</string>
     <string name="activity_add_entry_title">New entry</string>
     <string name="activity_new_user_title">New user</string>
+    <string name="activity_signin_title">Sign In</string>
     <string name="email">Your email</string>
     <string name="password">Your passWord</string>
-    <string name="signin">Sign in</string>
+    <string name="signin">Sign in with email</string>
     <string name="signinGoogle">Sign in with Google</string>
     <string name="signup">Sign up</string>
     <string name="ErrorCountAlready">The email address is already in use by another user!!! </string>

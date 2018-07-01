@@ -27,6 +27,9 @@
         <activity
             android:name=".NewUserActivity"
             android:label="@string/activity_new_user_title" />
+        <activity
+            android:name=".LoginActivity"
+            android:label="@string/activity_signin_title"></activity>
     </application>
 
 </manifest>

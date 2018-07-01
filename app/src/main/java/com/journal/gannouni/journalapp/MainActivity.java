@@ -44,35 +44,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         mActivityMainBinding.tvCreate.setOnClickListener(this);
     }
 
-    private void signIn() {
-
-        String email = mActivityMainBinding.etEmail.getText().toString().trim();
-        String password = mActivityMainBinding.etPassword.getText().toString().trim();
-
-        if (TextUtils.isEmpty(email)) {
-            Toast.makeText(getApplicationContext(), "Enter email address!", Toast.LENGTH_SHORT).show();
-            return;
-        }
-
-        if (TextUtils.isEmpty(password)) {
-            Toast.makeText(getApplicationContext(), "Enter password!", Toast.LENGTH_SHORT).show();
-            return;
-        }
-        mActivityMainBinding.progressBar.setVisibility(View.VISIBLE);
-        mFirebaseAuth.signInWithEmailAndPassword(email, password)
-                .addOnCompleteListener(MainActivity.this, new OnCompleteListener<AuthResult>() {
-                    @Override
-                    public void onComplete(@NonNull Task<AuthResult> task) {
-                        mActivityMainBinding.progressBar.setVisibility(View.GONE);
-                        if (!task.isSuccessful()) {
-                            Toast.makeText(MainActivity.this, getString(R.string.ErrorNoUser), Toast.LENGTH_LONG).show();
-                        } else {
-                            startActivity(new Intent(MainActivity.this, DiaryActivity.class));
-                            finish();
-                        }
-                    }
-                });
-    }
 
     @Override
     protected void onResume() {
@@ -102,11 +73,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()) {
-                            FirebaseUser user = mFirebaseAuth.getCurrentUser();
                             Intent intent = new Intent(getApplicationContext(), DiaryActivity.class);
-                            intent.putExtra("idUser", user.getUid());
                             startActivity(intent);
-                            finish();
 
                         }
                     }
@@ -119,7 +87,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             Intent intent = mGoogleSignInClient.getSignInIntent();
             startActivityForResult(intent, 100);
         } else if (view.getId() == mActivityMainBinding.btnSignin.getId()) {
-            signIn();
+            startActivity(new Intent(MainActivity.this, LoginActivity.class));
         } else if (view.getId() == mActivityMainBinding.tvCreate.getId()) {
             startActivity(new Intent(MainActivity.this, NewUserActivity.class));
 
